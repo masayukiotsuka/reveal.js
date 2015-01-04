@@ -3,8 +3,8 @@
 
 <head>
 <meta charset="shift_jis">
-<title>test document</title>
-<meta name="description" content="Vim&git講習">
+<title>Vim&Git講習</title>
+<meta name="description" content="Vim&Git講習">
 <meta name="author" content="大塚　政幸">
 <link rel="stylesheet" href="../../css/reveal.css">
 <link rel="stylesheet" href="../../css/theme/default.css" id="theme">
@@ -19,7 +19,7 @@
 
       <section data-markdown data-separator="---$" data-vertical="--$">
 	 <script type="text/template">
-# git・Vim講習
+# Vim&Git講習
 
 
 まずはインストール <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -28,40 +28,261 @@
 
  [Git](http://git-scm.com/downloads) <!-- .element: class="fragment" data-fragment-index="1" -->
 		---
+		## 目標
+		
+		+ 使えるようになる
+		+ 便利なところを理解する
+<br><br>
+
+		習うより慣れろ！ <!-- .element: class="fragment" data-fragment-index="1" -->
+		---
 		## Vim講習
-		--
+		---
 		## Vimとは？
 
-		+ 少ないタイプで編集するためのエディタ <!-- .element: class="fragment" data-fragment-index="1" -->
-		+ モード編集型エディタ <!-- .element: class="fragment" data-fragment-index="2" -->
+		テキストを編集するためのエディタの一つ <!-- .element: class="fragment" data-fragment-index="1" -->
+
+		他のエディタ… <!-- .element: class="fragment" data-fragment-index="2" -->
+
+		Emacs <!-- .element: class="fragment" data-fragment-index="3" -->
+
+		Terapad <!-- .element: class="fragment" data-fragment-index="4" -->
+
+		Sublime Text <!-- .element: class="fragment" data-fragment-index="5" -->
 		--
 		## Vimの特徴
 
 		+ 軽量なエディタ
 		+ 繰り返し作業が楽
 		+ 自分の好みの設定にできる
-		---
-		## Vimの基本コマンド
-		--
-		## 挿入モードにするコマンド
 
-		| i | カーソルの位置から挿入モード		  |
-		| a | カーソルの次の文字から挿入モード		  |
-		| o | カーソルの位置から改行をして挿入モード	  |
-		| O | カーソルの位置から上に改行をして挿入モード  |
+		---
+		## Vimの起動
+
+		```php
+		vim
+		```
 		--
-		## ノーマルモードでのコマンド
+		## チュートリアルの起動
+
+		```php
+		vimtutor
+		```
+		---
+		## .vimrcの編集
+
+		```php
+		vim .vimrc
+		:r $VIMRUNTIME/vimrc_example.vim
+		:w
+		```
+		---
+		## Vimにはモードがある
+		主に使うモードは4つ
+
+		1. ノーマルモード <!-- .element: class="fragment highlight-red" data-fragment-index="1" -->
+		2. 挿入モード
+		3. ビジュアルモード
+		4. コマンドラインモード<br><br>
+
+		EscまたはCtrl+[でノーマルモードに <!-- .element: class="fragment" data-fragment-index="2" -->
 		--
 		### カーソルの移動
 
-		+ h,j,k,l
-		---
-		## git講習
+		+ h, j, k, l … ←, ↓, ↑, →
+		+ ^, $ … 行の先頭, 最後
+		+ w, e, b … 単語ごとに移動
+		+ {, } … 段落ごとに移動
+		+ % … 対応するかっこ
+		+ Shift+h, Shift+m, Shift+l … 上, 中, 下
+		+ f + 飛びたい文字
 		--
-		## gitとは？<br><br>
+		## 画面の移動
+
+		+ Ctrl+e, Ctrl+y … 一行ずつ上, 下
+		+ Ctrl+d, Ctrl+u … 半画面ずつ上, 下
+		+ Ctrl+f, Ctrl+b … 一画面ずつ上, 下
+		+ zt, zz, zb … カーソルの位置を上, 中, 下
+		+ gg, G … 一番上, 下の行へ
+		+ Ctrl+o, Ctrl+i … 直前, 直後にいたカーソルの位置に移動 <!-- .element: class="fragment" data-fragment-index="1" --><br><br>
+
+		数字と組み合わせられる！！ <!-- .element: class="fragment" data-fragment-index="2" -->
+		---
+		## Vimにはモードがある
+		主に使うモードは4つ
+
+		1. ノーマルモード <!-- .element: class="fragment highlight-red" data-fragment-index="1" -->
+		2. 挿入モード <!-- .element: class="fragment highlight-red" data-fragment-index="1" -->
+		3. ビジュアルモード
+		4. コマンドラインモード
+		--
+		## 挿入モードにするコマンド
+
+		+ <span style="color:orange">i</span> … カーソルの位置から挿入モード		
+		+ a … カーソルの次の文字から挿入モード		 
+		+ o … カーソルの位置から改行をして挿入モード	  
+		+ O … カーソルの位置から上に改行をして挿入モード  
+		--
+		## 文字列の編集
+
+		+ r … 一文字置き換え
+		+ <span style="color:yellow">x</span> … 一文字削除
+		+ <span style="color:pink">d</span> + 指定 … 指定したところを削除
+		+ <span style="color:blue">D</span> … カーソル以降を削除
+		+ <span style="color:red">dd</span> … 一行削除
+		+ s … <span style="color:yellow">x</span> + <span style="color:orange">i</span>
+		+ S … <span style="color:red">dd</span> + <span style="color:orange">i</span>
+		+ c … <span style="color:pink">d</span> + <span style="color:orange">i</span>
+		+ C … <span style="color:blue">D</span> + <span style="color:orange">i</span>
+		--
+		## 繰り返し
+
+		. … 直前の操作の繰り返し
+		--
+		## undo
+
+		+ u … undo
+		+ Ctrl + r … undoの取り消し
+		--
+		## ヤンク
+
+		+ y + 指定 … ヤンクする
+		+ yy … 一行ヤンク
+		+ p … 貼り付ける
+
+		削除した文字は自動的にヤンクされる
+		---
+		## Vimにはモードがある
+		主に使うモードは4つ
+
+		1. ノーマルモード
+		2. 挿入モード
+		3. ビジュアルモード <!-- .element: class="fragment highlight-red" data-fragment-index="1" -->
+		4. コマンドラインモード
+
+		v + 指定 <!-- .element: class="fragment" data-fragment-index="2" -->
+		
+		使ってみて <!-- .element: class="fragment" data-fragment-index="3" -->
+		---
+		## Vimにはモードがある
+		主に使うモードは4つ
+
+		1. ノーマルモード 
+		2. 挿入モード
+		3. ビジュアルモード
+		4. コマンドラインモード <!-- .element: class="fragment highlight-red" data-fragment-index="1" --><br><br>
+
+		```php
+		:コマンド 
+		q:	 … コマンドの履歴の表示 
+		```
+		--
+		+ :r<span class="fragment fade-out">ead</span><span class="fragment" data-fragment-index="1">!</span> + ファイル名     … <span class="fragment" data-fragment-index="2">強制的に</span>ファイルの読み込み
+		+ :w<span class="fragment fade-out">rite</span><span class="fragment" data-fragment-index="3">!</span> + ファイル名    … <span class="fragment" data-fragment-index="4">強制的に</span>ファイル名で保存
+		+ :e<span class="fragment fade-out">dit</span><span class="fragment" data-fragment-index="5">!</span> + ファイル名     … <span class="fragment" data-fragment-index="6">強制的に</span>ファイル名を読み込み
+		+ :q<span class="fragment" data-fragment-index="7">!</span>	    … <span class="fragment" data-fragment-index="8">強制的に</span>Vimの終了
+		+ :h<span class="fragment fade-out">elp</span> + コマンド … コマンドのヘルプ
+		--
+		## 検索
+
+		/検索語句 … 下に検索
+
+		?検索語句 … 上に検索
+
+		* … カーソル上にある単語の検索
+
+		n … 次の検索語句へ
+
+		N … 前の検索語句へ
+
+		:noh<span class="fragment fade-out">lsearch</span> … ハイライトを消す
+		--
+		## タブの表示
+
+		+ :tabnew … 新しいタブを開く
+		+ :tabf … ファイルをタブで開く
+		+ gt … 次のタブに切り替える
+		+ gT … 前のタブに切り替える
+		+ 数字 + gt … "数字"番目のタブに切り替える
+		--
+		## 画面の分割
+
+		+ Ctrl + w → v … 縦に分割
+		+ Ctrl + w → s … 横に分割
+		+ Ctrl + w → h, j, k, l … 分割した画面間で移動
+		+ Ctrl + w → H, J, K, L … 分割した画面を移動
+		+ Ctrl + w → >, < … 分割した画面の大きさを変更
+		---
+		## マクロ
+
+		qa … 記録開始
+
+		q … 記録終了
+
+		@a … マクロの実行
+		---
+		## Git講習
+		--
+		## Gitとは？<br><br>
 		##### 一言でいうと <!-- .element: class="fragment" data-fragment-index="1" -->
 		### 分散型バージョン管理システム <!-- .element: class="fragment" data-fragment-index="2" -->
 		--
+		## バージョン型管理システムって?
+
+		良くやる事例
+
+		+ Basicmouse.c <!-- .element: class="fragment" data-fragment-index="1" -->
+		+ Basicmouse(1).c <!-- .element: class="fragment" data-fragment-index="2" -->
+		+ Basicmouse(2).c <!-- .element: class="fragment" data-fragment-index="3" -->
+		+ Basicmouse(3).c <!-- .element: class="fragment" data-fragment-index="4" -->
+		… <!-- .element: class="fragment" data-fragment-index="4" -->
+
+		バージョンを管理するためのシステム <!-- .element: class="fragment" data-fragment-index="5" -->
+		---
+		## どうやったら使えるの？
+
+		<p>まずは管理したいところで
+		```php
+		git init
+		```
+		--
+		```php
+		git status
+		git add 管理したいファイル名
+		git status
+		git commit -m "コメント"
+		git status
+		git log
+		```
+		--
+		## 差分
+
+		```php
+		git diff ファイル名
+		```
+		--
+		## 戻すには
+
+		```php
+		git checkout ファイル名
+		git reset HEAD 
+		```
+
+		以上
+		--
+		## Gitについてもっと知りたい！！
+
+		[もっと早く知りたかった！ Gitが鬼のようにわかるスライド厳選7選](http://www.find-job.net/startup/7-git-slides) <!-- .element: class="fragment" data-fragment-index="1" -->
+		---
+		## 参考までに
+
+		+ [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb) 
+		+ vimdiffで差分もとれる 
+		+ [Github](https://github.com/) 
+		---
+		以上です
+
+		ありがとうございました
 	 </script>
       </section>
 
