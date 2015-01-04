@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+<meta charset="utf-8">
+<title>test document</title>
+<meta name="description" content="test document">
+<meta name="author" content="大塚　政幸">
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+</head>
+
+<body>
+<div class="reveal">
+   <div class="slides">
+
+      <section data-markdown data-separator="\n---\n$" data-vertical="\n--\n$">
+	 <script type="text/template">
+## git・Vim講習
+		---
+		## Vim講習
+		--
+		## Vimとは？
+
+		+ 少ないタイプで編集するためのエディタ
+		+ モード編集型エディタ
+		--
+		## Vimの特徴
+
+		+ 軽量なエディタ
+		+ 繰り返し作業が楽
+		+ 自分の好みの設定にできる
+		--
+		## Vimの基本コマンド
+		--
+		## 挿入モードにするコマンド
+
+		+ i … カーソルの位置から挿入モード
+		+ a … カーソルの次の文字から挿入モード
+		+ o … カーソルの位置から改行をして挿入モード
+		+ O … カーソルの位置から上に改行をして挿入モード
+		--
+		## ノーマルモードでのコマンド
+		--
+		### カーソルの移動
+
+		+ h,j,k,l
+		---
+		## git講習
+		--
+		## gitとは？
+
+		+ 分散型バージョン管理システム
+	 </script>
+      </section>
+
+   </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+Reveal.initialize({
+controls: true,
+progress: true,
+history: true,
+center: true,
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+{ src: 'marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+{ src: 'plugin/notes/notes.js' }
+]
+});
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,1789 @@
+<!doctype html>
+<html lang="ja">
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<title>C_language</title>
+
+		<meta name="description" content="C_language">
+		<meta name="author" content="大下雅昭">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok2v=1613a3a185/"},atok:"2f46a7b547826b3ecea1c1634f833426",petok:"e804bdab82887e3c1987d37cb7c58d9c60e735d9-1420262345-1800",zone:"atpages.jp",rocket:"0",apps:{"ga_key":{"ua":"UA-239611-66","ga_bs":"2"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok2v=919620257c/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/serif.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	<script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+
+<script type='text/javascript'>
+googletag.cmd.push(function() {
+googletag.defineSlot('/9160377/atpages_728_own', [728, 90], 'div-gpt-ad-1391762929344-0').addService(googletag.pubads());
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+</script>
+<link rel="canonical" href="http://www54.atpages.jp/rmfmouse/C_language_kousyu/index.html" />
+<link rel="alternate" media="handheld" href="http://www54.atpages.jp/_/mgw/gw?_ucb_u=http%3A%2F%2Fwww54.atpages.jp%2Frmfmouse%2FC_language_kousyu%2Findex.html" type="text/html" /><script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-239611-66']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script>
+</head>
+
+<body><script type="text/javascript">
+  <!--
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-239611-66']);
+  _gaq.push(['_setDomainName', 'atpages.jp']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+   //-->
+</script>
+<div align="center" style="text-align:center; display:block !important;visibility:visible !important; margin:30px auto; width:728px;">
+<!-- atpages_728_own -->
+<div id='div-gpt-ad-1391762929344-0' style='width:728px; height:90px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1391762929344-0'); });
+</script>
+</div>
+</div>
+
+<div class="reveal">
+<div class="slides">
+
+<section>
+
+<h2>はぁ、なるほどなっとく</h2>
+<h1>C言語講習</h1>
+
+<small>theme : <a href="?#/themes">Default</a> - 
+<a href="?theme=sky#/themes">Sky</a> - 
+<a href="?theme=beige#/themes">Beige</a> - 
+<a href="?theme=simple#/themes">Simple</a> - 
+<a href="?theme=serif#/themes">Serif</a> - 
+<a href="?theme=night#/themes">Night</a> - 
+<a href="?theme=moon#/themes">Moon</a> - 
+<a href="?theme=solarized#/themes">Solarized</a></small>
+
+<br />
+
+<small>slide mode : <a href="?#/transitions">Default</a> -
+<a href="?transition=none#/transitions">None</a> -
+<a href="?transition=fade#/transitions">Fade</a> -
+<a href="?transition=slide#/transitions">Slide</a> -
+<a href="?transition=concave#/transitions">Concave</a> -
+<a href="?transition=zoom#/transitions">Zoom</a></small>
+
+</section>
+
+
+<section data-markdown data-separator="\n---\n$" data-vertical="\n--\n"> 
+<script type="text/template">
+
+
+## この講習の目的・目標
+
++ C言語を学ぶきっかけを一年生に作る
++ C言語の楽しさを知ってもらう
+	* 理解するための簡単な例だけではなく  
+	使ってみたくなるような応用例も示す
++ マウスとか学校の勉強に役立てる
+	*	難易度的に基礎プログラミング演習+αぐらい?
++ 今回の講習ではポインタとか構造体とか  
+の難しい概念には触れません(多分)
+	* 正直、教えたほうがCの本質を教えるのが楽
+	* やりたい人は後ろの方に用意してあるので使って、どうぞ
++ 今回の講習内容は、gcc4.8.2ででしか保証されません  
+あらかじめご了承ください<(＿ ＿)>  
+(たぶん最近のcコンパイラならいけるはず)
+--
+
+## プログラミング言語の種類
++ 手続き型(C, C++, FORTRAN, Perl, Python)
+	* 計算をプログラム状態を変化させる文字の列で記述する
+	* 手続き=実行すべき一連の計算ステップを持つもの
+	* 主な機能
+		- 手続きをプログラム実行中の任意の時点で呼び出すことができる
++ 関数型(Haskell, Scala, LISP)
+	* 計算を引数に関数を作用（applicate）させる
+	* 主な機能
+		- 第一級関数
+		- 参照透過性
+		- 遅延評価
+	* 関数型については詳しい説明はしません
+
+--
+
++ コンパイル型(C, C++, FORTRAN, Haskell, Java)
+	* 機械語、ないしバイトコードなどの中間言語に変換する
+	* 後述のインタプリタ型より速い
+	* 修正と動作テストを繰り返す場合などでは作業性が悪い
++ インタプリタ型(Perl, Python, Ruby)
+	* ソースコードないし中間表現にある命令列を逐次解釈しながら即実行する
+	* いちいちコンパイルしなくても良い
+	* しかし、毎回コンパイルしているのと同義で当然遅い
+
+- - -  
+正直コンパイル型の言語をインタプリタ的  
+に処理することもできるため明確に分別するのは難しい  
+例:Java, [ghci(Haskell)](http://www.haskell.org/haskellwiki/GHC/GHCi), [cint(C/C++)](http://root.cern.ch/drupal/content/cint)
+--
+
+今回の講習では
+# [Wandbox](http://melpon.org/wandbox/)
+を使用します。
+
+--
+
+#Wandboxとは
++ 最新のgccコンパイラが使える
++ pc環境に左右されない
++ 様々な最新のコンパイラが揃っている
++ C++に限るなら[boost](http://www.boost.org/)とかいう  
+ライブラリも__簡単に__使える(これ重要)
+
+--
+
+## Hello, World!
+コンパイルしてみよう!!!   
+		
+		#include<stdio.h>
+
+		int main(int argc,char **argv){
+			printf("Hello, World!");
+		}
+
+choose compilerの欄はgcc 4.8.2で上のコード  
+をコピペしてRunをクリック
+
+--
+
+## なぜC言語なのか
++ いろいろなプログラミング言語の構文の基礎になっている
+	* [C++](http://ja.uncyclopedia.info/wiki/C%2B%2B)
+	* Java
+	* Objective-C
+	* Javascript
++ 基本的にマイコンはCで無いと動かない
+	* あったとしても基本的にCに変換される
++ 自由度が高い(いろんな意味で)
+	* 文の区切りを「;」で表すことで改行文字にも空白にも区切りとしての意味しか持たせない
+	* 自由であることにはそれだけの責任(笑)が伴う <!-- .element: class="fragment highlight-red" -->
+
+--
+
+## C言語の自由度
+このように自由にコーディングすることができます。
+![](akari01.png) <!-- .element: class="fragment grow" -->
+
+__わぁい[IOCCC](http://www.ioccc.org/)！ あかり[IOCCC](http://www.ioccc.org/)大好き！__  
+
+---
+
+# データ
+
+--
+
+## 変数
++ 変数の種類
+	* bool 真理値型(1 or 0)(stdbool.h)
+	* int 整数型(-2147483648～2147483647)(2または4バイト)
+	* float 単精度浮動小数点型(だいたい1e-38から3e+38まで)(4バイト)
+	* double 倍精度浮動小数点型  
+	(だいたい2e-308から2e+308まで)(8バイト)
+	* unsigned char 文字型(0～255)(1バイト)([ASCIIコード](http://ja.wikipedia.org/wiki/ASCII))
+	* long 倍長整数型(4または8バイト)
+	* unsigned これを頭につけると符号を付けない分、大きい数を扱えるようになる
+		+ 例えばcharのみだと範囲はどうなる?
++ 変数は宣言しないとデータをいれることができない
+
+--
+## データ型のサンプルコード
+
+
+		#include<stdio.h>
+		#include<limits.h>
+		#include<float.h>
+
+		int main(void){
+			int a;//これで宣言したことになる
+			a = 1;//これでaに1というデータを入れる(これを代入という)
+			int b=1;//宣言と同時に代入を行うこともできる
+
+			printf("float_max:%e\n",FLT_MAX);
+			printf("float_min:%e\n",FLT_MIN);
+			printf("double_max:%e\n",DBL_MAX);
+			printf("double_min:%e\n",DBL_MIN);
+			printf("int_max:%d\n",INT_MAX);
+			printf("int_min:%d\n",INT_MIN);
+			printf("long_max:%ld\n",LONG_MAX);
+			printf("long_min:%ld\n",LONG_MIN);
+		}
+
+環境によって扱える数字の大きさが異なる  <!-- .element: class="fragment" -->
+
+--
+
+## スコープ
+
++ 基本的に{}で囲まれた範囲のことをいう
++ この中で宣言された変数はこの中でのみ有効
++ 同スコープ内で同じ文字は宣言できない
+
+--
+### スコープのサンプルコード
+
+		#include<stdio.h>
+		int a=10;//グローバル変数
+		int main(void){
+			printf("1: %d, %p\n",a,&a);
+				//中身, 格納されているメモリ番地
+			int a;
+			printf("2: %d, %p\n",a,&a);
+				//宣言したときは0が入っている(?)
+			{
+				a=1;
+				printf("3: %d, %p\n",a,&a);
+				int a;
+				printf("4: %d, %p\n",a,&a);
+				{
+					int a;
+					printf("5: %d, %p\n",a,&a);
+				}
+				printf("6: %d, %p\n",a,&a);
+			}
+			return 0;
+		}
+
+コンパイルしてみよう
+
+--
+
+## このコードからわかること
+
++ 子スコープで親スコープと同じ変数名を宣言した
+場合、別のメモリが確保される
++ 子スコープから親スコープの変数を参照できる
++ ただし、同じ変数名を宣言したときはそのスコープ内でのみ、その文字が参照される
++ 代入演算子で初期化をしよう(戒め)  <!-- .element: class="fragment grow" -->
++ 何度も同じ文字を宣言したのが間違いだったんや  <!-- .element: class="fragment grow" -->
++ 宣言時に、0が代入されているとは限らない  <!-- .element: class="fragment grow" -->
+
+--
+
+## リテラル
+大まかに言えば変数に入れる値を直接表記する書式
+
+	int a=12;//十進数
+	int b=0xaa;//十六進数
+
++ 種類 
+	* 二進数 0b1110 (ただし限られたコンパイラしか使用できない)
+	* 八進数 036
+	* 十進数 30
+	* 十六進数 0x1e or 0x1E
+	* 小数点 1.0 or 1.
+	* 指数表示 1.4e-03 (小数で表すと0.0014)
+	* 文字を' 'で囲むと文字リテラルになる
+	* 文字列(0文字以上)を" "で囲むと文字列を表す
+
+--
+
+## 文字リテラルの使い方
+
+		#include<stdio.h>
+		int main(void){
+			char a='w';//文字リテラルでwを表している
+			printf("%c\n",a);//wが表示される
+			a=65;//ASCIIコードのAが対応している数字
+			printf("%c\n",a+1);//Bが表示される
+			return 0;
+		}
+
+つまり、' 'は文字を数字になおしているだけ
+
+--
+
+## エスケープシーケンス
+文面として表現できない文字を表現する書式
+
++ \a  ベル文字（アラート）
++ \b  １文字分戻る
++ \f  ページ送り（クリア）
++ \n  改行、復帰
++ \r  同じ行の先頭に戻る
++ \t  水平タブ
++ \v  垂直タブ
++ \\\\  \を表示
++ \?  ?を表示
++ \'  シングルクォーテーション(')を表示
++ \"  ダブルクォーテーション(")を表示
++ \0  ヌル
+
+基本 \n と \t と \0を覚えておけばよい
+
+--
+
+## 配列
+C言語では同じデータの型の連なりを配列  
+として表現することができる。
+
+	int a[10];//整数型が10個入る配列の宣言
+	int b[]={1,2,3,4,5};
+		//このように初期化すれば大きさを指定しなくてもよい
+	char c[]="Hello, World!";//文字列=文字型の配列
+	char d[]={'H','e','l','l','o',',',' ','W','o','r','l','d','!','\0'}
+		//上の配列と同じ意味
+
+
+--
+
+## プリプロセッサ命令
++ コードを評価する前にコンパイラに処理をさせる
++ 基本的に複数行にわたって書くことができない
+
+コンパイルしてみよう
+		#define AAA 1 //コンパイルするときにAAAが1に置き換わる
+		#define String(x) #x //「#」の横に記号を書くと文字列扱いになる
+		#include<stdio.h> //これもプリプロセッサ命令
+
+		int main(void){
+			{
+				#define BBB 2
+				printf("%d\n",BBB);
+				printf(String(AAA));
+					/*先にString()マクロで文字列として評価されて文字列
+					になるので、その時はすでにコード上のAAAは消失している*/
+			}
+			printf("%d\n",BBB);//プリプロセッサ命令にスコープはない
+			return 0;
+		}
+
+参考:[プリプロセッサ命令一覧](http://www.cppll.jp/cppreference/preproc_details.html)  
+[Cプリプロセッサメタプログラミングで文字列系泥沼関数型プログラミング](http://qnighy.hatenablog.com/entry/20091107/1257587259)
+
+--
+
+## コメント
+コンパイルしてみよう
+
+		// はその行のみを見なかったことにする 
+		/* は囲まれた範囲を見なかったことにする*/
+
+		#define AA/**/ 2
+		#define AAA/**/ 1
+		#define stdio 10
+		#include<stdio.h> //プリプロセッサ命令は置き換わらない
+		int
+		/*
+			ここにもコメントは入る
+		*/
+		main
+		//めいんかんすー
+		(/*こんな感じで変数にメモをするのもあり*/void)
+		{
+			printf("%d/*このコメントはどうなるのかな*/\n",AAA);//AAA≠AA	
+				/*プリプロセッサ命令が実行されるよりも前にコメントは
+				見なかったことにされる。*/
+			return 0;
+		}
+## 見なかったことにしよう <!-- .element: class="fragment" -->
+
+--
+
+## ポインター、構造体
+
+ポインタも、構造体も、あるんだよ。
+
+--
+<!-- .slide: data-background="#99ff99" -->
+
+## 演習(データ)
+
+		#include<stdio.h>
+		
+		int main(void){
+			char a='A',b='B';
+			{
+				char a='B';
+				{
+					char b='A';
+				}
+				
+				{
+					printf("a: %c ,b: %c\n",a,b);
+				}
+			}
+		}
+
+波括弧を2つ一行のコメントアウトし  
+
+		a: A ,b: B
+
+と表示されるようにせよ
+
+--
+
+## おまけ
+
+* () 丸括弧  
+* [] 角括弧,**ブラケット**  
+* {} 波括弧,**カーリー**ブラケット  
+
+---
+
+# 演算子
+
+--
+
+### 演算子の種類と優先順位
+
+数が多いので以下のリンクから飛んで確認してください  
+[CとC++の演算子](http://goo.gl/oNZsS6)  
+
+--
+
+## 主な演算子
+
++ 四則演算(+ , - , * , /, %)
+	* %は余剰演算子
++ インクリメント、デクリメント
+	* a++としたらaとして評価され、a+1がaに代入される
+	* ++aとしたらa+1として評価され、a+1がaに代入される
+	* デクリメントはインクリメントのマイナスver
++ 代入演算子
+	* 右項の変数に左項の変数を代入する
+	* +=のように組み合わせて使うと右項と左項の和  
+	が右項の変数に代入される
+	* 四則演算バージョンも存在する
+
+--
+
+## 評価と代入
+
+コンパイルしてみよう
+
+		#include<stdio.h>
+		int main(void){
+			int a=1;
+			printf("a++ = %d\n",a++);//1と評価されてaには2が代入される
+			printf("++a = %d\n",++a);//2+1=3と評価されてaには3が代入される
+			return 0;
+		}
+
+--
+
+## 主な演算子
+
++ 比較演算子
+	* イコールはいつも右側
+	* aとbが等しいことは==で表す
+	* これらの演算の結果は真理値型(bool)で返ってくる
++ 論理演算子
+	* &だけではなく&&
+	* これも真理値型(bool)を返す
++ キャスト演算子 (型名)
+	* 括弧で囲んだ型に変換してくれる
+	* (int)1.00004で1になる
+
+ポインタに関連する演算子もあるんですがスルーします。
+
+--
+
+## ビット演算子
+マウスで結構使うかも(?)  
+
+```c
+
+a　　　　= 001010
+a<<2　　 = 101000 //a自体の値はそのまま
+a<<=2 //aに上の結果を代入する
+~a　　　 = 010111
+b　　　　= 101010
+a&b　　　= 001010	//ビット積
+a|b　　　= 101010	//ビット和
+a^b　　　= 100000	//ビット排他的論理和
+
+```
+
+--
+### 重箱の隅をつつくような演算子
+
++ sizeof演算子
+	* sizeof(データ型)　でデータ型のサイズを求める
++ カンマ演算子(a , b)
+	* 右項がのみが評価される
+	* 値であれば演算可能(後述する制御構造は  
+	コンパイルエラーになる)
++ 条件演算子(a ? b : c)
+	* 珍しい3項演算子
+	* aは真理値、aが真(0以外)の時bが評価され、偽(0)のときはc
+	* 最終的に値になるので後述の制御構造の条件式なかで  
+	使うことができる
+
+			a ? b :
+				c ? d :
+					e ? f : g;
+
+上記のように入れ子状にすることができる 
+
+
+--
+## 異なるデータ型の演算
+
+基本的に精度の高い方に合わせる
+
+		//double > float > long > int > char
+
+		#include<stdio.h>
+		int main(void){
+			double d=0.145;
+			int a=10,b=45;
+			printf("%f\n",(double)(a/b));
+			printf("%f\n",(double)a/b);
+				//まずaがdoubleにキャストされ、aにbがあわせてbもdoubleになる
+			printf("%f\n",a/d);//精度の高い方(double)に合わせaもdoubleになる
+			return 0;
+		}
+
+--
+
+<!-- .slide: data-background="#99ff99" -->
+## 演習(演算子)
+
+		#include<stdio.h>
+	
+		int main(void){
+			double d=(1)?0:1;
+			int ii=+d,i=(ii<<1<=0)?0xaaa:0;
+			printf("%f\n",((int)d/i));
+		}
+		
+1文字削除、1文字追加し、演算子を一つ削除することで
+0.000000 ,-nan ,nan ,inf, -inf以外の値が出力されるようにせよ  
+infは無限大、nanは計算エラーの意
+
+---
+
+# 制御構造
+
+--
+### C言語の制御構造一覧
+
+		if(条件式){
+			値が真(0以外)の場合に実行、それ以外はスルー
+		}
+		for(初期化式;継続条件式;再初期化式){
+			値が真(0以外)の場合に実行し繰り返す、それ以外はスルー
+		}
+		while(継続条件式){
+			値が真(0以外)の場合に実行し繰り返す、それ以外はスルー
+		}
+		do{
+			値が真(0以外)の場合に実行し繰り返す、それ以外はスルー
+		}while(継続条件式);<-この最後にある「;」に注意
+		break;//打ち切り
+		continue;//飛ばす
+		switch(式){
+			case 定数式:
+				break;
+			default:
+				break;
+		}
+--
+
+## if文とは
+
+		if(値){//一般的にこの括弧の中の値を条件式という
+			値が真(0以外)の場合に実行
+		}
+
+		if(値){
+			値が真(0以外)の場合に実行
+		}else{
+			値が偽(0)の場合に実行
+		}
+
+		if(値A){
+			値Aが真(0以外)の場合に実行
+		}else if(値B){
+			値Aが偽(0)かつ値Bが真(0以外)の場合に実行
+		}//このあとにまたelse もしくは else ifを置くことができる。
+
+つまり、条件によって分岐をさせることができる。
+
+--
+
+## if文のサンプルコード
+
+		#include<stdio.h>
+		int main(void){
+			double d=0;
+			if(d<0.){
+				printf("%lf\n",d);//偽なので実行されない
+			}
+			if(++d)printf("%lf\n",d);
+			//一行のみなら{}を省略可、このような場合は見やすい
+			if(3.14e-20)printf("%lf\n",d);//0以外だったらなんでも真
+			if((d==1.)?0:1)
+				//なにもしない
+			else
+				printf("%lf\n",d);//elseの場合についても一行省略は可能
+			//このような一行省略は構文上可能だがしないほうがわかりやすい
+			return 0;
+		}
+
+- - -
+
+##### ifと条件演算子の違い
+条件演算子は最終的に値になるのに対して、if文は何も返さない
+
+--
+## for文とは
+
+		for(初期化式/*最初にのみ実行される*/;値;再初期化式){
+			値が真(0以外)の場合に実行し繰り返す、それ以外はスルー
+		}
+		
+順番
+
++ 初期化式を実行
++ 値を評価する
++ {}中の文を実行
++ 再初期化式を実行する
++ 値を評価する
++ {}中の文を実行
++ 再初期化式を実行する
++ 値を評価(ry
+
+--
+## forのサンプルコード
+
+		#include<stdio.h>
+		int main(void){
+			int i=0; //0で初期化をする
+			for(i=0;i<10/*0から9までの10回繰り返す*/;i++){
+				printf("%d\n",i);
+			}
+			for(i=0;i<10;i++)printf("%d\n",i);//ifのように一行にまとめることも可
+			return 0;
+		}
+
+--
+
+## while文とは
+
+		while(値){
+			値が真(0以外)の場合に実行し繰り返す、それ以外はスルー
+		}
+		
+順番
+
++ 値を評価する
++ {}中の文を実行
++ 値を評価する
++ {}中の文を実行
++ 値を評価(ry
+
+--
+
+## while文のサンプルコード
+		# include<stdio.h>
+		int main(void){
+			int i=0;
+			while(i<10){
+				printf("%d\n",i);//0から9までの10回繰り返す
+				i++;
+			}
+			while(i<10)printf("%d\n",i++);/ifのように(ry
+			for(;i<10;)printf("%d\n",i++);
+			//forをwhileのように使うこともできる
+			return 0;
+		}
+
+--
+
+### for文とwhile文どちらがいいのか
+
+		for(;;);
+		while(1);//1は必ず書く
+		
++ 無限ループを書くときはfor文を書くほうが1文字短くかける
++ あとから有限ループにしようとした時、for文の場合書き込むだけ
++ あとforを使ったら、うまく行けばコンパイラがインライン展開してくれるかも
+
+結論:while文を使ったら負け <!-- .element: class="fragment" -->
+
+
+--
+## do~while文とは
+
+		do{
+			値が真(0以外)の場合に実行し繰り返す、それ以外はスルー
+		}while(値);
+		
+最後の「;」を忘れる人が非常に多い  <!-- .element: class="fragment" -->
+		
+順番
+
++ {}中の文を条件式の値が偽であろうが実行
++ 値を評価する
++ {}中の文を実行
++ 値を評価する
++ {}中の文を実行
++ 値を評価(ry
+
+
+--
+### do~while文のサンプルコード
+
+		#include<stdio.h>
+		int main(void){
+			int i=0;
+			do{
+				printf("%d\n",i++);
+			}while(i<10);//i=9で抜ける
+
+			do{
+				printf("%d\n",i++);//必ず一回は実行される
+			}while(i<10);
+			return 0;
+		}
+
+{}中の文を条件式の値が偽であろうが実行するのが特徴
+--
+## break,continue文とは
+
+		break;//ループから一つ抜ける
+		continue;//これからループの最後の方までスキップする
+--
+
+### break,continue文のサンプルコード
+
+		#include<stdio.h>
+		int main(void){
+			int i=0;
+			for(;;){//無限ループ
+				printf("%d\n",i++);
+				if(i>10)break;
+				if(i>5)continue;
+				printf("foo");
+			}
+			return 0;
+		}
+
+--
+
+## 多重ループから抜ける
+
+		exit(1);//プログラムを1を返してプログラムを強制終了する
+		//stdlib.hをインクルードすることで使える
+		goto label;の書かれているところまで飛ぶ 基本使ったら負け
+--
+### exit,gotoのサンプルコード
+
+		#include<stdio.h>
+		#include<stdlib.h>
+		int main(void){
+			int i=0,j=0;
+			for(;;){
+				for(;;){
+					printf("%d\n",j++);
+					if(i>10)exit(1);
+					if(j>9)goto label;
+				}
+			}
+			
+		label:
+			printf("aaa\n");
+			return 0;
+		}
+
+--
+
+### switch文とは
+
+		switch(値){
+			case 定数(具体的にはリテラル(整数、文字のみ)) :
+				break;
+			case 定数:
+				break;
+			default:
+				break;
+		}
+
++ 値に対応したcase以下の手続きを実行する。
++ breakを書かなければ無限ループになることもある。
+
+--
+### switch文のサンプルコード
+
+		#include<stdio.h>
+		int main(void){
+			int j=5;
+			switch(j){
+				case 3:
+					printf("j:%d\n",j);
+					break;//書いていない場合は最悪無限ループになる
+				case 4:
+				case 5:
+				case 6://このようにまとめることも可能
+					printf("j:%d\n",j,i++);
+					break;
+				default;//3,4,5,6のどれでもなかった場合実行
+					printf("j:%d\n",j,i++);
+					break;
+			}
+			return 0;
+		}
+--
+
+<!-- .slide: data-background="#99ff99" -->
+
+## 演習(制御構造)
+
+制御構造を使い、1000までの素数を全て足し合わせるプログラムを作成せよ。
+
+---
+
+# 関数
+
+--
+## 関数とは
+
++ 大まかにいうといくつかの引数をとり、一つの返り値を返す
++ いくつかの手続きをまとめることができる
++ 関数は宣言しなければ使うことができない
++ 返り値をはreturnによって指定しなければならない
++ 演算子も関数と考えることができる
+
+		一つの返り値 関数名(幾つかの引数){
+			幾つかの手続き
+			return 返り値;
+		}
+
+		int kansuu(int a,int b){
+			return a+b;
+		}
+		
+		//メイン関数も関数である
+		int main(void/*引数を何も受け取らないということ*/){
+
+		}
+
+--
+
+## 関数のサンプルコード
+
+		#include<stdio.h>
+		int plus(int a,int b){
+			printf("%d + %d",a,b);
+			return a+b;
+		}
+
+		int main(void){
+			int a=1,b=5;
+			printf("%d\n",plus(a,b));//関数を実行している
+			int i=0;
+			for(;printf("foo"),i<10;i++){
+			//printfは最終的にvoid型(何も返さない型)を返す関数なので
+			//カンマ演算子によって演算可能
+				printf("%d\n",plus(i,b));
+				if(i<5)continue;
+				printf("boo");
+			}
+			return 0;
+		}
+--
+## プロトタイプ
++ 関数の宣言のみ行う
++ 宣言しておけばそこ以降どこに関数の内容を書いても良い
++ 宣言しておけばそこ以降どこでもつかってよい
++ ただし他の関数の中以外
+
+		返り値 関数名(引数);
+
+		int kansuu(int a,int b);
+
+
+--
+
+## プロトタイプのサンプル
+
+		#include<stdio.h>
+		int func(int a,int b);
+		int func1(int a,int b);
+
+		int func(int a,int b){
+			return func1(a,b);
+		//関数の内容自体はあとに書かれているが
+		//このように利用することができる
+		}
+		int func1(int a,int b){
+			return a*b;
+		}
+		int main(void){
+			
+		}
+
+--
+
+## 再帰関数
+
+基本的に関数Aの定義に関数Aが入っているような関数である
+
+		
+		//例
+		int func(int a,int b){
+			return b*func(a,b-1);
+		}
+
++ 漸化式を想像するとわかりやすい
++ 基本的にただのループになるのでそのような場合はfor文  
+を使うべき
++ 関数がどのように働いているかわかりやすい
+
+--
+
+### 再帰関数のサンプルコード
+		
+		#include<stdio.h>
+		int pow(int a,int b){
+			if(b==0){
+				return 1;
+			}
+			return a*pow(a,b-1);//再帰
+		}
+		int factorial(int a){return (a==0)?1:a*factorial(a-1);}
+		//条件演算子を使うとこのように一行で組める
+
+		int main(void){
+			printf("pow:%d\n",pow(5,3));
+			printf("factorial:%d\n",factorial(5));
+		}
+
+漸化式をそのまま落とし込めるので楽
+
+--
+
+## ライブラリのインクルード
+
+正直、全部いちいちプログラムを組むのはめんどくさい
+>>ライブラリがあるじゃない
+
+		#include<ライブラリ名.h>//.hがついているファイルをヘッダという
+		
+		OR
+		
+		//自分で作ったライブラリをカレントディレクトリで
+		#include"ライブラリ名.h"
+
+でそのライブラリの中の関数やらマクロやら構造体が使える。
+
+--
+
+### 標準的なライブラリ一覧
+[link:ヘッダファイル一覧](http://www.c-tipsref.com/reference.html)  
+
+特に重要なのが
+
++ stdio.h 入出力 std(standard) io(Input / Output)
++ stdlib.h 一般ユーティリティ
++ math.h 数学
+
+--
+
+### stdio.hで重要な関数
+
++ [printf](http://www.c-tipsref.com/reference/stdio/printf.html)
++ [scanf](http://www.c-tipsref.com/reference/stdio/scanf.html)
++ [sprintf](http://www.c-tipsref.com/reference/stdio/sprintf.html)
++ [sscanf](http://www.c-tipsref.com/reference/stdio/sscanf.html)
+
+### stdlib.hで重要な関数
+
++ [calloc](http://www.c-tipsref.com/reference/stdlib/calloc.html)
++ [free](http://www.c-tipsref.com/reference/stdlib/free.html)
++ [atoi](http://www.c-tipsref.com/reference/stdlib/atoi.html)
++ [atof](http://www.c-tipsref.com/reference/stdlib/atof.html)
+
+### math.hで重要な関数
+
++ sin,cos,tan,asin,acos,atan,exp,log,pow,sqrt
+
+--
+<!-- .slide: data-background="#99ff99" -->
+
+## 演習(関数)
+
+制御構造(if,for,while,do~while,switch)は一切使わずに1000までの素数を全て足し合わせるプログラムを作成せよ
+
+---
+
+# ポインタ
+
+--
+
+### 注意
+
+この資料は過去のVR部隊の輪講において使用した資料です。  
+多少の読みにくさは勘弁して下さい。
+
+--
+##問題点
++ C言語の山場
++ バッファオーバーラン
++ なんだかよくわからない
+
+--
+
+##なにが
+###楽しい
+##のか？
++ メモリを操作できる
++ プログラミングの自由度が広がる
++ 動作が速くなったりする
+
+--
+
+##ポインタを宣言してみよう
+###int
+
+		int *p;//*を関節演算子という
+
+###double
+
+		double a=20;
+		double *p=&a;//&ｗｐアドレス演算子という
+
+--
+
+## 質問
+		
+		int*　p,pp;
+
+ポインタとして宣言された変数はどれとどれでしょう？
+
+pだけ <!-- .element: class="fragment" -->
+
+--
+
+intと変数との間に*があればポインタになる  
+しかしそれは最初のひとつだけ  
+ppもポインタにしたいのであれば
+
+		int *p,*pp;
+
+としなければならない
+
+--
+
+##ポインタの参照
+	
+		int a=10;
+		int *p=&a;
+		
+		*a;//aはアドレスではないのでコンパイルエラーになる
+		&a;//整数型変数のaのアドレス
+		*p;//ポインタpが格納しているアドレスの中身
+		&p;//ポインタpのアドレス
+		*(&a);//整数型変数のaのアドレスの中身=変数aの中身
+
+もちろん
+
+		*p=9;
+		*(&a)=8;
+
+代入もできる。
+
+
+--
+
+##文字列の宣言
+
+		char　p[]="aaa";
+
+こう宣言したとき
+
+		p
+
+とだけ書いた場合pはポインターの指しているアドレスである。  
+つまり
+
+		char　*p="aaa";
+
+と同じ(?どうかな)
+
+--
+
+## 配列添え字演算子とポインタ
+
+		int i=0,a=10,*p=&a;
+		
+		p[i] == *(p+i)//同様の意味
+		
+ポインタから配列を作ることができる。
+さらに、ポインタは配列のように宣言時に大きさを宣言しなくても代入できてしまう
+
+
+--
+
+## 関数とポインタ
+
+		int* func(int* p/*ポインタ*/){
+			int* pp=p;
+			return p;
+		}
+		
+		int a[]={1,2,3,4,5}
+		
+		int func1(int p[]){//これで配列の先頭のポインタを引数にとっていることになる
+			return p[2];//配列を引数に取り、配列の三番目を返す		
+		}
+		
+		int main(void){
+			printf("%d\n",func1(a));//なにが表示されるかな
+		}
+このようにポインタを関数の引数として取ることができる。  
+これの利点は
+
++ 配列や文字配列などの先頭のポインタを渡してやる  
+ことで関数に配列を渡すことができる。
++ 渡されたアドレスに値を入れることができる  
+
+--
+
+## 値渡しと参照渡し
+
++ 値渡し
+	* 関数に値を渡す
+	* 関数の中にデータがコピーされる
+		- 効率は悪い
+	* 渡した値はを編集することはできない
+		- 逆に言えば、編集されないことが保証されている
+- 参照渡し
+	* 関数に値のアドレス(参照)を渡す
+	* 関数の中にデータがコピーされない
+		- 効率が良い
+	* 渡した値を編集することができる
+
+			int a;
+			func(a);//値渡し
+			func(&a);//参照渡し
+		
+--
+
+例:scanf関数
+
+		double* d;
+		int i;
+		char c;
+
+		scanf("%lf %d %c"//指定したフォーマット
+				,d/*dはポインタなので&を付けなくても良い*/,&i,&c);
+
+scanfはアドレスを直接いじる関数のよい例である。
+
+--
+
+##動的なメモリの確保
++ 前の宣言では文字数が限定される。  
++ 最初に文字数を聞いて文字を入力するようにしたい  
++ Cではcallocまたはmalloc/free関数  
++ C++ではnew/delete関数を使う  
++ (もちろんCの方法も使用できる)  
++ 動的なメモリの確保はメモリの用量が制限されている場合有効
++ 一度使った領域を再利用できる
+
+--
+
+##Cの場合
+callocは領域を0で初期化するがmallocは初期化しない
+###使用例
+		
+		int n,i;scanf("%d",&n);//文字数を取得
+		char　*p=(char*)calloc(n+1,sizeof(char));
+	  //calloc関数の戻り値は(void*)なので(char*)でキャストする
+	  //n+1は最後に終端文字'\0'を入れるためのゆとり
+	  //sizeof(型名)=その型ひとつに消費するメモリ数
+		for(i=0;i<n;i++)scanf("%c",p++);
+	  //iはnまでをカウントするだけ
+	  //後置インクリメント演算子は値が"評価"されてから加算される
+	  //つまりポインタのアドレスにscanfで代入されてから
+	  //次のアドレスにポインタが移る
+	  //&を忘れているわけではなく、pはポインタなので問題なし
+		*p="\0";//終端文字をおかないとprintfで%sが使えないかも
+		printf("%s\n",p);
+		free(p);//使ったメモリは開放しないとやばい
+
+--
+
+##C++の場合
+newでできる
+使用例
+
+		int　n,i;scanf("%d",&n)；//ここまでは同じ
+		char　*p=new　char[n+1];//これでいける
+		for(i=0;i<n;i++)scanf("%c",p++);
+		*p="\0";
+		printf("%s\n",p);
+		delete　[]　p;//これで開放できる。
+
+ってゆうかstd::stringとstd::cinを使いましょう
+
+--
+
+## コマンドライン引数
+		
+		int　main(int argc,char* argv[]){}
+		
+		OR
+
+		int　main(int argc,char** argv){}
+と書くと
+
+		./test　ooo.txt
+とファイルを読み込ませることができる
+
+--
+
+### ポインタのポインタ vs 配列演算子
+
+		char**　argv　vs　char*　argv[]
+
+文字列の宣言のスライドを見てみよう  
+しかし＊と[]は異なった点がある  
+[]は＊と違い
+
+		char　i[10];
+
+のように範囲を限定できる
+
+--
+
+##データ構造
+いろいろなデータ構造がポインタを使って実装できる
+
++ 可変長配列(vector)
++ グラフ(boost::adjacency_list)
++ 木構造
+
+大体構造体の中に中身とポインタを入れることで作れる
+
+--
+
+## 関数ポインタ
+文字どおり関数のポインタ  
+intを引数にとり、intの返値をもつ関数のポインタの宣言
+
+		int　(*p)(int);//*より()のほうが優先度が高いので括弧で囲む
+
+intとdoubleを引数にとり、intの返り値を  
+もつ関数のポインタの宣言
+
+		int　(*p)(int,double);
+
+--
+
+## 質問
+ポインタはよくわかりましたか？  
+
+では  <!-- .element: class="fragment" -->
+
+intを引数に取り、charを返す関数の関数ポインタ
+を格納する要素3の配列へのポインタpを
+宣言してください  <!-- .element: class="fragment" -->
+
+--
+
+##答え
+
+		char (*(*p)[3])(int);
+
+(^^;)ちょっと何言ってるか分からないですね...
+
+--
+
+## 解説
+
+
++ 後置演算子が優先。(関数の()、配列の[]
++ しかし括弧で囲めばカッコ内の読みが優先される
++ 型にするときは
+
+		int(*f)(int)->int(*)(int)
+
+とする
+
+- - - 
+	
+#### 演算子は英語で読む
+	
+		*=pointer to ...  
+		()=function returning ...  
+		[]=array of ...
+
+--
+## 解説2
+p is pointer to
+
+		*p
+
+array of 
+
+		(*p)[3]//ポインタの読みのほうが優先されるため括弧がつく
+
+pointer to
+
+		*(*p)[3]
+
+function returning char
+
+		char (*(*p)[3])(int);
+
+完成!!!
+
+--
+
+## 例題
+intを引数に取り、charを返す関数の関数ポインタを引数にとり、intを返す関数ポインタpを宣言してください
+
+--
+
+### 答え
+
+
+		int (*p)(char(*)(int));
+
+OR
+
+		typedef char (*x)(int);
+		int　(*p)(x);
+		でも可
+
+
+--
+
+### 関数ポインタサンプルコード
+
+コンパイルしてみよう
+
+		#include<stdio.h>
+		
+		int func1(int a){
+			return a*a;
+		}
+		int func2(int a){
+			return a*a*a;
+		}
+		
+		int func3(int a,int mode){
+			switch(mode){
+				case 0:
+					return a*a;
+				case 1:
+					return a*a*a;
+				default:
+					return 0;
+			}
+		}/*関数ポインタを使わない場合の実装方法
+		それぞれの手続きに分割できないだけでなく
+		switchを使わねければならなくなる
+		*/
+		int (*func[])(int)={func1,func2};
+		
+		#define func func[mode]
+		
+		int main(void){
+			int mode=0,a,b;
+			printf("mode a b>");
+			scanf("%d %d",&mode,&a);
+			printf("%d\n",func(a));
+			/*このようにマクロを使うことで
+			モード切替やそのままのコードを使う
+			ことが出来るのでプロトタイピングにも
+			使用出来る*/
+			return 0;
+		}
+
+--
+
+## 質問
+ポインタはよくわかりましたか？  
+
+
+最後に  <!-- .element: class="fragment" -->
+
+intを引数に取りintを返す関数の関数ポインタpを引数に取り  
+intを引数に取りintを返す関数の関数ポインタを返す  
+関数fのプロトタイプを宣言してください  <!-- .element: class="fragment"-->
+
+##### ただし、typedefは使えない呪いにかかっています  <!-- .element: class="fragment"-->
+
+--
+
+##答え
+
+		int (*f(int (*p)(int,int)))(int);
+
+--
+
+### これが何の役に立つのか？
++ C言語で関数型プログラミングっぽいプログラムが組める(?)
++ 関数とか配列化できたら便利(モード変換とか、プロトタイプ開発とか)
++ 状況によって関数を作ることができる
++ 合成関数とか作れる(C++11のラムダ式を使うのが吉)
+
+- - -
+
+結論:(C++11)or(boost)を使いましょう  
+むしろCしか使えない状況(mouse)だったら、使うべき
+
+--
+
+### Link
+
+[ちゅーん vs くいなちゃん ポインタ解ってる](http://togetter.com/li/262116)  
+[Cでのポインタの読み方](http://sakurai.sumomo.ne.jp/page/c_pointer)  
+[C++11](http://ja.wikipedia.org/wiki/C%2B%2B11)  
+[boost](http://www.boost.org/)  
+[boost::adjacency_list](http://www.boost.org/doc/libs/1_55_0/libs/graph/doc/adjacency_list.html)  
+[boost::spirit](http://www.boost.org/doc/libs/1_55_0/libs/spirit/doc/html/index.html)  
+
+---
+
+# 構造体
+
+--
+
+## 構造体とは
+
++ 新たに型を作る
++ いままでに出てきた型を組み合わせる
++ データをひとまとめにできる
+
+--
+### 構造体とは
+
+		//型の宣言
+		struct data1{
+			様々な型を列挙する//これのことをメンバという
+		};//「;」を忘れやすい
+		
+		typedef struct{
+		
+		}data2;
+		
+		//型の宣言(使うとき)
+		struct data1 d1;
+		data2 d2;//typedefしているのでstructをつけなくてもよい
+		
+--
+
+#### 構造体やポインタに絡む演算子
+演算子の章では紹介をしなかったがこの章で説明する。  
+まず、構造体を宣言する
+
+		typedef struct{
+			int a;
+			char b;
+		}data;
+
+##### 直接メンバ演算子
+
+		data d;//構造体を宣言して
+		d.a=1;//構造体の中のint aに代入している
+
+##### 間接メンバ演算子
+
+		data* dp=&d;//構造体data型のポインタを宣言してdのアドレスを入れる
+		dp->b='A';
+		(&d)->b='B';//これでも可能
+
+つまり
+
+		構造体.構造体のメンバ
+		構造体のアドレス->構造体のメンバ
+
+--
+
+## 構造体のサンプルコード
+
+コンパイルしてみよう
+
+		#include<stdio.h>
+		
+		typedef struct{
+			char name[10];
+			int weight;
+			int height;
+		}ossu;
+		
+		int main(void){
+			ossu ora={"gokuu",2,10};//このように初期化にブラケットを使うことができる
+			ossu* aaa=&ora;
+			printf("Myname is %s .\nweight=%d\nheight=%d\n",ora.name,ora.weight,ora.height);
+			printf("Myname is %s .\nweight=%d\nheight=%d\n",aaa->name,aaa->weight,aaa->height);
+			return 1;
+		}
+
+--
+
+## 構造体と関数
+
+構造体は配列と違って値渡しができる
+
+		int func(struct data a){
+			return a.data1;
+		}
+
+この場合値はコピーされるので、比較的  
+容量の大きい構造体では効率が悪い
+
+		int func(struct data* a){
+			return a->data1;
+		}
+
+こうするのが吉
+
+また、値渡しができるという事は構造体を返り値とすることもできる
+--
+
+### 自己参照構造体
+
++ 再帰関数の構造体バージョン
++ 構造体Aの定義の中に構造体Aの値もしくは参照が含まれる
+
+		struct vector{
+			int data;
+			struct vector* next;
+		};
+		//こんな感じ
+
+これを使うことによって
+
++ 可変長配列
++ 挿入、削除が可能な配列
++ グラフ構造(迷路も作れる)
+
+などが作成可能である。
+
+--
+
+## Ans
+
+			//関数の演習の解答
+	
+			#include<stdio.h>
+
+			int func2(int i,int j){
+					return (i<=j)?1:((i%j==0)?0:func2(i,j+1));
+			}
+			int func1(int max,int i,int sum){
+					return (i>max)?sum:func1(max,i+1,sum+((func2(i,2)==1)?i:0));
+			}
+
+			int main(void){
+					printf("%d\n",func1(1000,3,2));
+			}
+
+--
+
+## 可変長配列の実装例
+コンパイルしてみよう
+
+		#include<stdio.h>
+		#include<stdlib.h>
+		
+		struct atom{
+			int data;
+			struct atom* next;
+		};
+		
+		typedef struct atom atom;
+		
+		typedef struct{
+			atom* head;
+			atom* tail;
+		}vector;
+		
+		int at(vector* v,int n){
+			int i=0;
+			atom* next=v->head;
+			for(;i++<n;){
+				next=next->next;
+				if(next==NULL){
+					printf("Out of range\n");
+					exit(1);
+				}
+			}
+			return next->data;
+		}
+		
+		void push_back(vector* v,int i){
+			atom* new_atom;
+			if ((new_atom=(atom*)calloc(1,sizeof(atom)))==NULL){
+				printf("malloc error\n");
+				exit(EXIT_FAILURE);
+			}
+			new_atom->data=i;
+			new_atom->next=NULL;
+			if(v->head==NULL){
+				v->head=new_atom;
+				return;
+			}
+			if(v->tail!=NULL){
+				v->tail->next=new_atom;
+			}else{
+				v->head->next=new_atom;
+			}
+			v->tail=new_atom;
+		}
+		void showAll(vector* v){
+				atom* head=v->head;
+				for(;head!=NULL;){
+					printf("%d\n",head->data);
+					head=head->next;
+				}
+		}
+		void kill_them_all(vector* v){
+			atom* next;
+			for(;next!=NULL;){
+				next=v->head->next;
+				free(v->head);//free関数は動的に確保した領域でないと開放できない
+				v->head=next;
+			}
+		}
+		
+		int main(void){
+			vector v={NULL,NULL};
+			push_back(&v,5);//まるでC++のvectorクラスのように動作する
+			push_back(&v,4);
+			push_back(&v,8);
+			push_back(&v,1);
+			printf("v[2]=%d\n",at(&v,2));//このように参照できる
+			showAll(&v);//全部表示
+			kill_them_all(&v);//動的に確保した領域は開放してあげないとね
+			//注目すべきはこのmain関数にatomがひとつも出てきていないという事だ
+			return 0;	
+		}
+		//多分もっと簡単な実装例があるはず
+
+---
+
+## ご清聴ありがとうございました
+
+* このスライドを作るために使った物
+	+ [reveal.js](http://lab.hakim.se/reveal-js/#/)
+	+ [markdown](http://daringfireball.net/projects/markdown/)
+	
+
+</script>
+</section>
+
+
+
+</div>
+</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	<!-- Google Code for @pages&#35370;&#21839;&#32773;&#12479;&#12464; -->
+<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1065732302;
+var google_conversion_label = "L0vLCK7sqAkQzpGX_AM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1065732302/?value=0&amp;label=L0vLCK7sqAkQzpGX_AM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+</body>
+</html>
+
